@@ -1,11 +1,24 @@
 /* 18-style.css */
 
+/* Normalize CSS */
+@import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
+
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap");
+
+/* Universal box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Root variables */
+/* Define reusable color and font variables */
 :root {
   /* Color variables */
   --color-primary: #d73953;
@@ -19,23 +32,20 @@ html {
   --font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-family-title: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-  /* Font size variables */
-  --font-size-small: 1.2rem;
-  --font-size-medium: 1.6rem;
-  --font-size-large: 1.8rem;
-  --font-size-x-large: 2.3rem;
-  --font-size-xx-large: 4.8rem;
-
-  /* Font weight variables */
+  /* Font weights */
   --font-weight-regular: 400;
   --font-weight-bold: 700;
 
-  /* Line height variables */
+  /* Line heights */
   --line-height-small: 1.2;
   --line-height-base: 1.5;
   --line-height-big: 1.8;
 
-  /* Section spacing variables */
+  /* Section layout variables */
+  --section-header-align: center;
+  --section-tagline-transform: uppercase;
+  --section-title-margin: 0;
+  --section-title-color: var(--color-black);
   --section-padding: 5rem 0;
   --section-header-padding: 0 0 3rem;
   --section-body-padding: 0 0 3rem;
@@ -43,54 +53,60 @@ html {
   --section-footer-align: center;
   --footer-padding: 5rem 0 1rem;
 
-  /* Navbar variables (Task 18) */
+  /* Navbar variables */
   --nav-item-font-family: var(--font-family-title);
   --nav-item-font-weight: var(--font-weight-bold);
   --nav-item-font-size: var(--font-size-medium);
-  --nav-item-letter-spacing: 0.4rem; /* 4% of root element (1rem = 62.5% base) */
+  --nav-item-letter-spacing: 0.4rem;
   --nav-item-display: inline-block;
   --nav-item-margin: 3rem 0 0 0;
   --nav-item-link-hover: var(--color-primary);
 }
 
-/* Font sizing */
-html {
-  font-size: 62.5%;
-}
-
+/* Body text styling */
 body {
   color: var(--text-color);
   font-family: var(--font-family-base);
-  font-size: var(--font-size-medium);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-base);
 }
 
-/* Links */
+/* Links (only if they have href) */
 a[href] {
   color: var(--text-color);
   text-decoration: none;
 }
 
-a:visited {
+a[href]:visited {
   font-style: italic;
 }
 
-a:hover {
+a[href]:hover {
   text-decoration: underline;
 }
 
-a:active {
+a[href]:active {
   background-color: var(--color-light-grey);
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-title);
-  font-weight: var(--font-weight-bold);
+/* Hide visually hidden elements */
+.visually-hidden {
+  display: none;
 }
 
-/* Section structure */
+/* Accent-colored elements */
+.card-category,
+.section-tagline {
+  color: var(--color-primary);
+}
+
+/* Section container */
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* Section styling */
 .section {
   padding: var(--section-padding);
 }
@@ -108,6 +124,12 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--section-title-color);
 }
 
+.section-tagline {
+  font-family: var(--font-family-title);
+  text-transform: var(--section-tagline-transform);
+  font-weight: var(--font-weight-bold);
+}
+
 .section-body {
   padding: var(--section-body-padding);
 }
@@ -117,19 +139,15 @@ h1, h2, h3, h4, h5, h6 {
   text-align: var(--section-footer-align);
 }
 
-/* Section tagline */
-.section-tagline {
-  color: var(--color-primary);
-  font-family: var(--font-family-title);
-  font-weight: var(--font-weight-bold);
-  text-transform: var(--section-tagline-transform);
+/* Footer */
+.footer {
+  padding: var(--footer-padding);
 }
 
-/* Container */
-.container {
-  width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+/* Headings (h1–h6) use title font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-title);
+  font-weight: var(--font-weight-bold);
 }
 
 /* Navbar styles */
@@ -155,14 +173,9 @@ nav .nav-item {
 
 nav .nav-link {
   display: block;
-  padding: 0.5rem 1rem; /* half of root for top/bottom, equal for sides */
+  padding: 0.5rem 1rem;
 }
 
 nav .nav-link:hover {
   color: var(--nav-item-link-hover);
-}
-
-/* Footer */
-.footer {
-  padding: var(--footer-padding);
 }
