@@ -1,0 +1,51 @@
+/* 4-style.css */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Define reusable color and font variables */
+:root {
+  /* Color variables */
+  --color-primary: #d73953;
+  --color-black: #090909;
+  --color-white: #ffffff;
+  --color-light-grey: #f3f3f3;
+  --color-dark-grey: #353535;
+  --text-color: var(--color-black);
+
+  /* Font variables */
+  --font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-title: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Body text styling */
+body {
+  color: var(--text-color);
+  font-family: var(--font-family-base);
+}
+
+/* Links */
+a {
+  color: var(--text-color);
+}
+
+/* Hide visually hidden elements */
+.visually-hidden {
+  display: none;
+}
+
+/* Accent-colored elements */
+.card-category {
+  color: var(--color-primary);
+}
+
+.section-tagline {
+  color: var(--color-primary);
+}
+
+/* Headings (h1–h6) use title font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-title);
+}
