@@ -1,0 +1,30 @@
+/*2-style.css*/
+
+/* Smooth scroll from the previous task */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Text and color values */
+body {
+  color: #161616;
+}
+
+a {
+  color: #161616;
+}
+
+/* Hide visually-hidden elements */
+.visually-hidden {
+  display: none;
+}
+
+/* Accent color for specific elements */
+.card-category {
+  color: #D73953;
+}
+
+.section-tagline {
+  color: #D73953;
+}
+
